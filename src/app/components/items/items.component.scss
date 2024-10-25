@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+
+.card_items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    p {
+        font-family: "Kumbh Sans", sans-serif;
+    }
+
+    .photo {
+        img {
+            border-radius: 10px;
+            max-width: 50px;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+
+
+    .right {
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       height: 100%;
+        
+        
+
+
+        .sneaker_name {
+            p {
+                font-family: "Kumbh Sans", sans-serif;
+                font-size: 16px;
+                color: hsl(219, 9%, 45%);
+            }
+        }
+
+        .price {
+            display: flex;
+            gap: 15px;
+
+            p {
+                font-family: "Kumbh Sans", sans-serif;
+                font-size: 16px;
+                color: hsl(219, 9%, 45%);
+            }
+
+            .price_total{
+                color: hsl(0, 0%, 0%);
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .icon_remove {
+        display: flex;
+        align-items: center;
+        background-color: none !important;
+        button {
+            background-color: white;
+            border: none;
+            img{
+                width: 100%;
+                background-color: none;
+            }
+        }
+    }
+}

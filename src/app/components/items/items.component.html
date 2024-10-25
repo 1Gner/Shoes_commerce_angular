@@ -1,0 +1,29 @@
+<div class="card_items">
+    <div class="photo">
+        <img src="{{photo}}" alt="" (click)="open()">
+    </div>
+
+
+
+    <div class="right">
+        <div class="sneaker_name"> 
+            <p> {{sneaker}}</p>
+        </div>
+
+        <div class="price">
+            <p class="price_unit">${{price | number: '1.2-2'}}</p>
+            <p class="quantity">x {{quantity}}</p>
+            <p class="price_total">${{priceT | number: '1.2-2'}}</p>
+        </div>
+
+    
+
+    </div>
+
+
+    <div class="icon_remove">
+        <button (click)="removeItem()"><img src="../../../assets/icon-delete.svg" alt=""></button>
+    </div>
+
+
+</div>

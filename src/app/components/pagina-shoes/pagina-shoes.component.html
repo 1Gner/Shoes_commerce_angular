@@ -1,0 +1,124 @@
+<div class="view">
+
+    <div class="container">
+        <div class="header">
+            <div class="logo_options">
+                <img src="../../../assets/logo.svg" alt="">
+
+                <div class="options">
+                    <ul class="list_options">
+                        <li>
+                            <p>Collections</p>
+                        </li>
+                        <li>
+                            <p>Men</p>
+                        </li>
+                        <li>
+                            <p>Women</p>
+                        </li>
+                        <li>
+                            <p>About</p>
+                        </li>
+                        <li>
+                            <p>Contact</p>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="user_market">
+                <div class="icon_market">
+                    <img src="../../../assets/icon-cart.svg" alt="" (click)="showCart()">
+                </div>
+                <div class="icon_user">
+                    <img src="../../../assets/image-avatar.png" alt="">
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="line">
+            <hr class="custom_line">
+        </div>
+
+        <div class="mid_section">
+            <div class="shoes_img_left">
+                <div class="big_img">
+                    <img src="{{photoSelected}}" alt="">
+                </div>
+
+                <div class="smalls_imgs">
+                    <ul class="list">
+                        <li><img src="{{photo1}}" alt=""  (click)="selectPhoto(photo1)" tabindex="0"[class.selected]="photoSelected == photo1"></li>
+                        <li><img src="{{photo2}}" alt=""  (click)="selectPhoto(photo2)" tabindex="0"[class.selected]="photoSelected == photo2"></li>
+                        <li><img src="{{photo3}}" alt=""  (click)="selectPhoto(photo3)" tabindex="0"[class.selected]="photoSelected == photo3"></li>
+                        <li><img src="{{photo4}}" alt=""  (click)="selectPhoto(photo4)" tabindex="0" [class.selected]="photoSelected == photo4"></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="card_right">
+
+                <div class="titulo_and_company">
+                    <h3>SNEAKER COMPANY</h3>
+                    <h1>{{produtoName}}</h1>
+                </div>
+
+                <div class="description">
+                    <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber
+                        outer
+                        sole, theya all withstand everything the weather can offer.</p>
+                </div>
+
+
+                <div class="price">
+                    <div class="price_with_discont">
+                        <h1>${{price | number: '1.2-2'}}</h1>
+                        <h2>{{discount}}%</h2>
+                    </div>
+
+                    <div class="real_price">
+                        <h2>${{realPrice | number: '1.2-2'}}</h2>
+                    </div>
+                </div>
+
+                <div class="select_quantity">
+                    <div class="change_quantity">
+                        <button (click)="decNumber()" type="button">
+                            -
+                        </button>
+                        <p>{{number}}</p>
+
+                        <button (click)="addNumber()" type="button">
+                            +
+                        </button>
+                    </div>
+
+                    <div class="add_to_cart">
+                        <button class="butao" (click)="sendCart()">
+                            <img src="../../../assets/icon-cart.svg" alt="">
+                            <p>Add to cart</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card_items1" [ngClass]="{'hide': show}">
+            <app-cart></app-cart>
+        </div>
+
+        <div class="light_box" [ngClass]="{'hide': closeLight}" >
+            <app-light-box></app-light-box>
+        </div>
+
+    </div>
+
+</div>

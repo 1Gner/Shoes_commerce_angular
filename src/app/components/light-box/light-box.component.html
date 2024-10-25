@@ -1,0 +1,23 @@
+<div class="shoes_img_left">
+    <div class="close">
+        <button class="X" (click)="close()"> <mat-icon class="custom-icon">clear</mat-icon> </button>
+    </div>
+
+    <div class="big_img">
+        <img src="{{photoo[index]}}" alt="">
+        <div class="botoes">
+            <button class="seta_esquerda" (click)="changePhoto()"> <mat-icon class="arrow_left">keyboard_arrow_left</mat-icon> </button>
+            <button class="seta_direita" (click)="changePhotoNext()"> <mat-icon class="arrow_right">keyboard_arrow_right</mat-icon> </button>
+        </div>
+    </div>
+
+    <div class="smalls_imgs">
+        <ul class="list">
+            <li><img src="{{photoo[0]}}" alt=""  (click)="selectPhoto(0)" tabindex="0"[class.selected]="photoSelected == photoo[0]"></li>
+            <li><img src="{{photoo[1]}}" alt=""  (click)="selectPhoto(1)" tabindex="0"[class.selected]="photoSelected == photoo[1]"></li>
+            <li><img src="{{photoo[2]}}" alt=""  (click)="selectPhoto(2)" tabindex="0"[class.selected]="photoSelected == photoo[2]"></li>
+            <li><img src="{{photoo[3]}}" alt=""  (click)="selectPhoto(3)" tabindex="0" [class.selected]="photoSelected == photoo[3]"></li>
+        </ul>
+    </div>
+
+</div>
