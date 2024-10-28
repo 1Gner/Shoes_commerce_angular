@@ -23,10 +23,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0px 10px;
 
             .logo_options {
                 display: flex;
                 gap: 30px;
+                align-items: center;
+
+                .menu {
+                    display: none;
+
+                }
+
 
 
                 img {
@@ -89,16 +97,21 @@
             display: flex;
             justify-content: space-between;
             padding: 90px;
-            gap: 150px;
+            gap: 125px;
 
             .shoes_img_left {
                 max-width: 500px;
+                width: 100%;
 
                 .big_img {
                     img {
                         width: 100%;
                         height: auto;
                         border-radius: 10px;
+                    }
+
+                    .botoes {
+                        display: none;
                     }
                 }
 
@@ -119,7 +132,8 @@
                             border-radius: 10px;
 
                         }
-                        img.selected{
+
+                        img.selected {
                             border: 4px solid hsl(26, 100%, 55%);
                         }
 
@@ -134,7 +148,8 @@
 
 
             .card_right {
-                max-width: 550px;
+                max-width: 500px;
+                width: 100%;
                 margin-top: 50px;
 
                 .titulo_and_company {
@@ -237,7 +252,7 @@
 
                 .add_to_cart {
                     width: 60%;
-                
+
 
                     .butao {
                         cursor: pointer;
@@ -294,5 +309,379 @@
             z-index: 1000;
         }
     }
+
+}
+
+@media(max-width: 1024px) {
+
+
+    .view {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding-top: 60px;
+
+            .header {
+                position: fixed;
+                right: 0px;
+                top: 0px;
+                width: 100%;
+                display: flex;
+                height: 60px;
+                z-index: 4;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 20px;
+                margin: 0px;
+                background-color: white;
+
+
+                .logo_options {
+                    display: flex;
+                    gap: 30px;
+                    justify-content: center;
+                    align-items: center;
+
+                    .menu {
+                        display: block;
+                        background-color: white;
+                        border: none;
+
+                    }
+
+                    .overlay{
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        width: 50%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        transition: opacity 0.3s ease;
+                        opacity: 1;
+                        z-index:100;
+                    }
+
+                    img {
+                        max-width: 100px;
+                        height: auto;
+                    }
+
+                    .options {
+                        display: none;
+                    }
+
+                }
+
+                .user_market {
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+
+                    .icon_market {
+                        img {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .icon_user {
+                        img {
+                            max-width: 40px;
+                        }
+                    }
+
+                }
+            }
+
+            .line {
+                .custom_line {
+                    .custom-line {
+                        border: none;
+                        border-top: 1px solid #e0e0e0;
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .mid_section {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0px;
+                gap: 0px;
+
+                .shoes_img_left {
+                    max-width: 100vw;
+
+                    .big_img {
+                        position: relative;
+
+                        img {
+                            width: 100%;
+
+                        }
+
+                        .botoes {
+                            display: block;
+                            .seta_esquerda {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                border: 2px solid white;
+                                border-radius: 100%;
+                                padding: 15px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 20px;
+                                font-weight: bold;
+                                cursor: pointer;
+
+                                &:hover {
+                                    color: hsl(26, 100%, 55%);
+                                }
+
+                                mat-icon.arrow_left {
+                                    font-weight: bold;
+
+                                }
+                            }
+
+                            .seta_direita {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                right: 0px;
+                                border: 2px solid white;
+                                border-radius: 100%;
+                                padding: 15px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+
+
+                                &:hover {
+                                    color: hsl(26, 100%, 55%);
+                                }
+
+                                mat-icon.arrow_right {
+
+                                    font-weight: bold;
+
+                                }
+
+
+                            }
+                        }
+                    }
+
+                    .smalls_imgs {
+                        display: none;
+                    }
+                }
+
+
+                .card_right {
+                    max-width: 550px;
+                    margin-top: 0px;
+                    padding: 15px;
+
+                    .titulo_and_company {
+                        h3 {
+                            font-family: "Kumbh Sans", sans-serif;
+                            margin-bottom: 10px;
+                            color: hsl(219, 9%, 45%);
+                            font-size: 13px;
+                        }
+
+                        h1 {
+                            font-family: "Kumbh Sans", sans-serif;
+                            margin-bottom: 20px;
+                            color: hsl(0, 0%, 0%);
+                            font-size: 28px;
+                        }
+                    }
+
+                    .description {
+                        margin-bottom: 20px;
+
+                        p {
+                            font-family: "Kumbh Sans", sans-serif;
+                            color: hsl(219, 9%, 45%);
+                        }
+                    }
+
+
+                    .price {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .price_with_discont {
+                            display: flex;
+                            gap: 20px;
+                            align-items: center;
+
+                            h1 {
+                                font-family: "Kumbh Sans", sans-serif;
+                                font-size: 28px;
+                            }
+
+                            h2 {
+                                border: 1px solid black;
+                                padding: 5px 5px;
+                                border-radius: 5px;
+                                background-color: black;
+                                color: white;
+                                font-size: 16px;
+                                font-family: "Kumbh Sans", sans-serif;
+                            }
+                        }
+
+                        .real_price {
+                            margin-top: 10px;
+
+                            h2 {
+                                color: hsl(219, 9%, 45%);
+                                font-family: "Kumbh Sans", sans-serif;
+                                text-decoration: line-through;
+                                font-size: 20px;
+
+                            }
+                        }
+                    }
+
+                    .select_quantity {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        margin-top: 30px;
+
+                        .change_quantity {
+                            display: flex;
+                            border: 1px solid hsl(223, 64%, 98%);
+                            width: 100%;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 10px 25px;
+                            border-radius: 6px;
+                            background-color: hsl(223, 64%, 98%);
+
+
+
+                            button {
+                                background-color: hsl(223, 64%, 98%);
+                                font-family: "Kumbh Sans", sans-serif;
+                                color: hsl(26, 100%, 55%);
+                                font-size: 18px;
+                                font-weight: bold;
+                                display: grid;
+                                align-items: center;
+                                border: none;
+                                position: relative;
+                                top: -2px;
+                                cursor: pointer;
+
+                            }
+
+                            p {
+                                font-family: "Kumbh Sans", sans-serif;
+                                font-weight: bold;
+                            }
+                        }
+
+                    }
+
+                    .add_to_cart {
+                        width: 100%;
+
+
+                        .butao {
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            display: flex;
+                            padding: 10px 5px;
+                            border-radius: 6px;
+                            gap: 10px;
+                            background-color: hsl(26, 100%, 55%);
+                            border: 1px solid hsl(26, 100%, 55%);
+
+
+                            img {
+                                filter: grayscale(100%) brightness(0);
+                            }
+
+
+                            p {
+                                font-family: "Kumbh Sans", sans-serif;
+                                display: flex;
+                                align-items: center;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .card_items1 {
+                position: absolute;
+                top: 95px;
+                left: 50%;
+                transform: translate(-50%);
+                max-width: 350px;
+                width: 100%;
+                z-index: 9999;
+                background-color: white;
+                border-radius: 10px;
+                pointer-events: none;
+            }
+
+            .light_box {
+                display: none;
+            }
+
+        }
+
+
+    }
+
+
+    .menu_left {
+        position: fixed;
+        top: 0;
+        left: 0;
+        max-width: 50vw !important;
+        width: 100%;
+        height: 100%;
+        padding: 10px 30px;
+        background-color: white !important;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease;
+        z-index: 9999;
+        pointer-events: none ;
+
+      
+
+        p {
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .close {
+           margin-bottom: 25px;
+           pointer-events: all;
+            
+        }
+    }
+
 
 }

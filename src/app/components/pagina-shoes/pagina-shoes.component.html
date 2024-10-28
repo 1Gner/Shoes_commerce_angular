@@ -2,7 +2,41 @@
 
     <div class="container">
         <div class="header">
+
+
             <div class="logo_options">
+
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" class="menu" (menuOpened)="onMenuOpened()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+
+                <mat-menu #menu="matMenu" class="menu_left"  >
+                    <button mat-menu-item class="close" (click)="closeMenu()" (click)="onMenuClosed()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+
+                    <button mat-menu-item class="clique" >
+                        <p>Collections</p>
+                    </button>
+                    <button mat-menu-item class="clique">
+                        <p>Men</p>
+                    </button>
+                    <button mat-menu-item class="clique">
+                        <p>Women</p>
+                    </button>
+                    <button mat-menu-item class="clique" >
+                        <p>About</p>
+                    </button>
+                    <button mat-menu-item class="clique">
+                        <p>Contact</p>
+                    </button>
+
+                </mat-menu>
+
+                <div [ngClass]="{'hide': !showOverlay}" class="overlay"  (click)="closeMenu()" (click)="onMenuClosed()"></div>
+
+
                 <img src="../../../assets/logo.svg" alt="">
 
                 <div class="options">
@@ -50,15 +84,25 @@
         <div class="mid_section">
             <div class="shoes_img_left">
                 <div class="big_img">
-                    <img src="{{photoSelected}}" alt="">
+                    <img src="{{photoo[index]}}" alt="">
+                    <div class="botoes">
+                        <button class="seta_esquerda" (click)="changePhoto()"> <mat-icon
+                                class="arrow_left">keyboard_arrow_left</mat-icon> </button>
+                        <button class="seta_direita" (click)="changePhotoNext()"> <mat-icon
+                                class="arrow_right">keyboard_arrow_right</mat-icon> </button>
+                    </div>
                 </div>
 
                 <div class="smalls_imgs">
                     <ul class="list">
-                        <li><img src="{{photo1}}" alt=""  (click)="selectPhoto(photo1)" tabindex="0"[class.selected]="photoSelected == photo1"></li>
-                        <li><img src="{{photo2}}" alt=""  (click)="selectPhoto(photo2)" tabindex="0"[class.selected]="photoSelected == photo2"></li>
-                        <li><img src="{{photo3}}" alt=""  (click)="selectPhoto(photo3)" tabindex="0"[class.selected]="photoSelected == photo3"></li>
-                        <li><img src="{{photo4}}" alt=""  (click)="selectPhoto(photo4)" tabindex="0" [class.selected]="photoSelected == photo4"></li>
+                        <li><img src="{{photoo[0]}}" alt="" (click)="selectPhoto(0)" tabindex="0"
+                                [class.selected]="photoSelected == photoo[0]"></li>
+                        <li><img src="{{photoo[1]}}" alt="" (click)="selectPhoto(1)" tabindex="0"
+                                [class.selected]="photoSelected == photoo[1]"></li>
+                        <li><img src="{{photoo[2]}}" alt="" (click)="selectPhoto(2)" tabindex="0"
+                                [class.selected]="photoSelected == photoo[2]"></li>
+                        <li><img src="{{photoo[3]}}" alt="" (click)="selectPhoto(3)" tabindex="0"
+                                [class.selected]="photoSelected == photoo[3]"></li>
                     </ul>
                 </div>
 
@@ -115,7 +159,7 @@
             <app-cart></app-cart>
         </div>
 
-        <div class="light_box" [ngClass]="{'hide': closeLight}" >
+        <div class="light_box" [ngClass]="{'hide': closeLight}">
             <app-light-box></app-light-box>
         </div>
 
